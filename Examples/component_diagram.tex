@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt, svgnames]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{listings}
+\usepackage{../tikz-umld}
+
+\textwidth 18.5cm
+\textheight 25.5cm
+\hoffset=-2.9cm
+\voffset=-2.9cm
+
+\sloppy
+\hyphenpenalty 10000000
+
+\date{}
+\title{}
+\author{}
+
+\lstdefinelanguage{tikzuml}{language=[LaTeX]TeX, classoffset=0, morekeywords={umlbasiccomponent, umlprovidedinterface, umlrequiredinterface, umldelegateconnector, umlassemblyconnector, umlVHVassemblyconnector, umlHVHassemblyconnector, umlnote, umlusecase, umlactor, umlinherit, umlassoc, umlVHextend, umlinclude, umlstateinitial, umlbasicstate, umltrans, umlstatefinal, umlVHtrans, umlHVtrans, umldatabase, umlmulti, umlobject, umlfpart, umlcreatecall, umlclass, umlvirt, umlunicompo, umlimport, umlaggreg}, keywordstyle=\color{DarkBlue}, classoffset=1, morekeywords={umlcomponent, umlsystem, umlstate, umlseqdiag, umlcall, umlcallself, umlfragment, umlpackage}, keywordstyle=\color{DarkRed}, classoffset=0,  sensitive=true, morecomment=[l]{\%}}
+
+\begin{document}
+
+\maketitle
+
+If you want to copy and paste the following source code, please take care of white spaces and special characters such as the minus symbol !
+
+\medskip
+\lstset{breaklines=true, frame=trBL, language=tikzuml}
+\begin{lstlisting}
+    \umlbasiccomponent[x=0, y=0, fill = white]{Component1}
+    \umlpostrequiredinterface[interface=C-interface, distance= 3cm, y=0.5cm]{Component1}
+    \umlprerequiredinterface[interface=B-interface, distance = 3cm, y =-0.5cm]{Component1}
+    \umlpreprovidedinterface[interface=A-interface, fill = white, distance = 3cm, y =0.5cm]{Component1}
+    \umlpostprovidedinterface[interface=D-interface, fill = white, distance = 3cm, y = -0.5cm]{Component1}
+\end{lstlisting}
+
+\begin{center}
+  \scalebox{2}
+  {
+    \begin{tikzpicture}
+      \umlbasiccomponent[x=0, y=0, fill = white]{Component1}
+      \umlpostrequiredinterface[interface=C-interface, distance= 3cm, y=0.5cm]{Component1}
+      \umlprerequiredinterface[interface=B-interface, distance = 3cm, y =-0.5cm]{Component1}
+      \umlpreprovidedinterface[interface=A-interface, fill = white, distance = 3cm, y =0.5cm]{Component1}
+      \umlpostprovidedinterface[interface=D-interface, fill = white, distance = 3cm, y = -0.5cm]{Component1}
+    \end{tikzpicture}
+  }
+\end{center}
+\end{document}
